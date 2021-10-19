@@ -29,9 +29,9 @@ def find_word(string_list):
     # loop through each line of the string list 
     for line in string_list:
     # find all the words that match the regular expression in each line
-        words = re.findall(regex, line) 
+        match_words = re.findall(regex, line) 
     # loop through the found words and add the words to your empty list 
-        for i in words:
+        for i in match_words:
             word_list.append(i) 
     #return the list of all words that start with the letter B, E, or T
     return word_list 
@@ -49,9 +49,9 @@ def find_days(string_list):
     # loop through each line of the string list
     for line in string_list:
     # find all the dates that match the regular expression in each line
-        dates = re.findall(regex, line)
+        match_dates = re.findall(regex, line)
     # loop through the found dates and only add the days to your empty list 
-        for i in dates:
+        for i in match_dates:
             day_list.append(i[1])
     #return the list of days
     return day_list
@@ -67,9 +67,9 @@ def find_domains(string_list):
     # loop through each line of the string list
     for line in string_list:
     # find all the domains that match the regular expression in each line
-        domains = re.findall(regex,line)
+        match_domains = re.findall(regex,line)
     # loop through the found domains
-        for i in domains:
+        for i in match_domains:
     # get the domain name by splitting the (//) after the https or http to get the website name
     # then strip the www. to get only the domain name
             name = i.split('//')[1].strip('www.')
